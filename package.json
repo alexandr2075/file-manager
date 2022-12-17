@@ -1,0 +1,20 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "file.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/file.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandr2075/file-manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandr2075/file-manager/issues"
+  },
+  "homepage": "https://github.com/alexandr2075/file-manager#readme"
+}
