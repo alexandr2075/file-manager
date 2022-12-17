@@ -1,21 +1,14 @@
-import { statSync } from "fs";
+import { createReadStream } from "fs";
 import path from "path";
-import { chdir, cwd } from "process";
+import { stdout, cwd } from "process";
 
-export const cat = (string) => {
+export const cat = (nameFile) => {
   try {
+    const pathFile = path.resolve(cwd(), nameFile);
 
-    const pathDest = string.split(' ')[1];
-    
-    const pathDir = path.resolve(cwd(), pathDest);
-
-    chdir(pathDir);
-    const stat = statSync(pathDir);
-    if (!stat.isDirectory()) {
-      console.log("Invalid input.");
-    }
-    console.log(`You are currently in path to working_directory: ${pathDir}\n`);
+    const read = createReadStream(pathFile);
+    read.pipe(stdout);
   } catch (error) {
-    console.log("Invalid input");
+    console.log("Operation failed");
   }
 };

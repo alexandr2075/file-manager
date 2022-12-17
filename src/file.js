@@ -1,10 +1,11 @@
 import readline from 'readline';
-import { stdin, stdout, chdir, cwd} from 'process';
+import { chdir, cwd} from 'process';
 
 import { up } from './up.js';
 import { ls } from './ls.js';
 import { cd_dir } from './cd_dir.js';
 import { cat } from './cat.js';
+import { add } from './add.js';
 
 const arg = process.argv.slice(2);
 const name = arg[0].split('=')[1];
@@ -43,6 +44,11 @@ rl.on('line', (input) => {
     cd_dir(input);
   }
   if (input.slice(0, 3) === 'cat') {
-    cat(input);
+    const nameFile = input.split(' ')[1];
+    cat(nameFile);
+  }
+  if (input.slice(0, 3) === 'add') {
+    const nameFile = input.split(' ')[1];
+    add(nameFile);
   }
 })
