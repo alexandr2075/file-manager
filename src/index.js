@@ -8,6 +8,7 @@ import { cat } from './cat.js';
 import { add } from './add.js';
 import { rn } from './rn.js';
 import { cp, mv, rmFile } from './cp_mv_rm.js';
+import { opSys } from './os.js';
 
 const arg = process.argv.slice(2);
 const name = arg[0].split('=')[1];
@@ -71,5 +72,9 @@ rl.on('line', (input) => {
   if (input.slice(0, 2) === 'rm') {
     const pathFile = input.split(' ')[1];
     rmFile(pathFile);
+  }
+  if (input.slice(0, 2) === 'os') {
+    const arg = input.split(' ')[1];
+    opSys(arg);
   }
 })
