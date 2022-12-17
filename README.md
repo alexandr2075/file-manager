@@ -1,5 +1,6 @@
-# Hi there, I'm [Alexandr](https://www.linkedin.com/in/alexandrl-li/) ![](https://github.com/blackcater/blackcater/raw/main/images/Hi.gif) 
-### Computer science student, IT news writer from Russia 🇷🇺
+<h1 align="center">Hi there, I'm <a href="https://www.linkedin.com/in/alexandrl-li/" target="_blank">Alexandr</a> 
+<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
+<h3 align="center">Frontend Web Developer</h3>
 Assignment: File Manager
 Description
 Your task is to implement File Manager using Node.js APIs.
