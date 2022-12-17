@@ -1,3 +1,5 @@
+# Hi there, I'm [Alexandr](https://www.linkedin.com/in/alexandrl-li/) ![](https://github.com/blackcater/blackcater/raw/main/images/Hi.gif) 
+### Computer science student, IT news writer from Russia 🇷🇺
 Assignment: File Manager
 Description
 Your task is to implement File Manager using Node.js APIs.
