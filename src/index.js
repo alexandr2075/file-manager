@@ -9,6 +9,7 @@ import { add } from './add.js';
 import { rn } from './rn.js';
 import { cp, mv, rmFile } from './cp_mv_rm.js';
 import { opSys } from './os.js';
+import { hashForFile } from './hash.js';
 
 const arg = process.argv.slice(2);
 const name = arg[0].split('=')[1];
@@ -76,5 +77,9 @@ rl.on('line', (input) => {
   if (input.slice(0, 2) === 'os') {
     const arg = input.split(' ')[1];
     opSys(arg);
+  }
+  if (input.slice(0, 4) === 'hash') {
+    const pathTofile = input.split(' ')[1];
+    hashForFile(pathTofile);
   }
 })
