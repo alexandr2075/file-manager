@@ -7,6 +7,7 @@ import { cd_dir } from './cd_dir.js';
 import { cat } from './cat.js';
 import { add } from './add.js';
 import { rn } from './rn.js';
+import { cp } from './cp.js';
 
 const arg = process.argv.slice(2);
 const name = arg[0].split('=')[1];
@@ -21,7 +22,7 @@ const rl = readline.createInterface({input: process.stdin, output: process.stdou
 rl.write(`Welcome to the File Manager, ${name}!\n`)
 
 chdir(process.env.USERPROFILE);
-rl.write(`You are currently in path to working_directory: ${cwd()}\n`)
+rl.write(`You are currently in path to working directory: ${cwd()}\n`)
 rl.on('SIGINT', () => {
   exit();
 })
@@ -56,5 +57,10 @@ rl.on('line', (input) => {
     const oldNameFile = input.split(' ')[1];
     const newNameFile = input.split(' ')[2];
     rn(oldNameFile, newNameFile);
+  }
+  if (input.slice(0, 2) === 'cp') {
+    const pathFile = input.split(' ')[1];
+    const pathNewDir = input.split(' ')[2];
+    cp(pathFile, pathNewDir);
   }
 })

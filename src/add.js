@@ -10,7 +10,7 @@ export const add = async (nameFile) => {
     if (existsSync(nameFile)) {
       throw new Error();
     }
-    writeFile(pathFile, 'wx');
+    writeFile(pathFile);
     console.log(`An empty file ${nameFile} was created`);
   } catch(error) {
     console.log('File already exist');
