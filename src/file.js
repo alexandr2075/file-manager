@@ -6,6 +6,7 @@ import { ls } from './ls.js';
 import { cd_dir } from './cd_dir.js';
 import { cat } from './cat.js';
 import { add } from './add.js';
+import { rn } from './rn.js';
 
 const arg = process.argv.slice(2);
 const name = arg[0].split('=')[1];
@@ -50,5 +51,10 @@ rl.on('line', (input) => {
   if (input.slice(0, 3) === 'add') {
     const nameFile = input.split(' ')[1];
     add(nameFile);
+  }
+  if (input.slice(0, 2) === 'rn') {
+    const oldNameFile = input.split(' ')[1];
+    const newNameFile = input.split(' ')[2];
+    rn(oldNameFile, newNameFile);
   }
 })
