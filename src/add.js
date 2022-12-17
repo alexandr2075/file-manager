@@ -7,12 +7,11 @@ export const add = async (nameFile) => {
   const pathFile = path.resolve(cwd(), nameFile);
 
   try {
-    if (existsSync(nameFile)) {
-      throw new Error();
-    }
-    writeFile(pathFile);
+    await writeFile(pathFile, ' ', {flag: 'wx'}, (err) => {
+      if (err) throw err;
+    });
     console.log(`An empty file ${nameFile} was created`);
   } catch(error) {
-    console.log('File already exist');
+    console.log(error);
   }
 };

@@ -7,7 +7,7 @@ import { cd_dir } from './cd_dir.js';
 import { cat } from './cat.js';
 import { add } from './add.js';
 import { rn } from './rn.js';
-import { cp } from './cp.js';
+import { cp, mv, rmFile } from './cp_mv_rm.js';
 
 const arg = process.argv.slice(2);
 const name = arg[0].split('=')[1];
@@ -62,5 +62,14 @@ rl.on('line', (input) => {
     const pathFile = input.split(' ')[1];
     const pathNewDir = input.split(' ')[2];
     cp(pathFile, pathNewDir);
+  }
+  if (input.slice(0, 2) === 'mv') {
+    const pathFile = input.split(' ')[1];
+    const pathNewDir = input.split(' ')[2];
+    mv(pathFile, pathNewDir);
+  }
+  if (input.slice(0, 2) === 'rm') {
+    const pathFile = input.split(' ')[1];
+    rmFile(pathFile);
   }
 })
