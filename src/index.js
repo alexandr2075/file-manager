@@ -10,6 +10,7 @@ import { rn } from './rn.js';
 import { cp, mv, rmFile } from './cp_mv_rm.js';
 import { opSys } from './os.js';
 import { hashForFile } from './hash.js';
+import { compress, decompress } from './compress.js';
 
 const arg = process.argv.slice(2);
 const name = arg[0].split('=')[1];
@@ -81,5 +82,15 @@ rl.on('line', (input) => {
   if (input.slice(0, 4) === 'hash') {
     const pathTofile = input.split(' ')[1];
     hashForFile(pathTofile);
+  }
+  if (input.slice(0, 8) === 'compress') {
+    const pathToFile = input.split(' ')[1];
+    const pathToDestination = input.split(' ')[2];
+    compress(pathToFile, pathToDestination);
+  }
+  if (input.slice(0, 10) === 'decompress') {
+    const pathToFile = input.split(' ')[1];
+    const pathToDestination = input.split(' ')[2];
+    decompress(pathToFile, pathToDestination);
   }
 })
